@@ -26,7 +26,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_last_updated_fmt = "%d %B %Y"
 html_logo = "static/logo/CartoGIS.png"
-html_short_title = "CartoGIS"
+html_short_title = "Kamyar H."
 html_title = ""
 
 html_theme = "sphinx_book_theme"
