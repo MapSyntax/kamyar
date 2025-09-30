@@ -2,6 +2,5 @@ ipykernel
 nbsphinx
 jupyterlab
 geopandas
-sphinx_book_theme
 ipywidgets
-sphinx-simrofy-theme
+sphinx-nefertiti
