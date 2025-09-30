@@ -9,7 +9,7 @@
 project = 'PersonalWebsite'
 copyright = 'Kamyar Hasanzadeh'
 author = 'Kamyar Hasanzadeh'
-release = '2024'
+release = '2025'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
