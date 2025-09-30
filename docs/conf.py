@@ -29,7 +29,7 @@ html_logo = "static/logo/CartoGIS.png"
 html_short_title = "Kamyar H."
 html_title = ""
 
-html_theme = "sphinx-simrofy-theme"
+html_theme = "sphinxawesome-theme"
 
 
 html_theme_options = {
