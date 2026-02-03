@@ -28,7 +28,7 @@ Site contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Profile
+   :caption: Menu
 
    cv.ipynb
    publications.ipynb
