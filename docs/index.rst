@@ -30,11 +30,11 @@ Site contents
    :maxdepth: 2
    :caption: Profile
 
-   notebooks/cv.ipynb
-   notebooks/publications.ipynb
-   notebooks/teaching.ipynb
-   notebooks/projects.ipynb
-   notebooks/contact.ipynb
+   cv.ipynb
+   publications.ipynb
+   teaching.ipynb
+   projects.ipynb
+   contact.ipynb
 
 
    
