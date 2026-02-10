@@ -19,14 +19,15 @@ kh_profile = {
         "University of Helsinki",
     ],
     "details": [
-        {"icon": "map", "text": "Helsinki / Espoo, Finland"},
+        {"icon": "map", "text": "Helsinki, Finland"},
         {"icon": "home", "text": "University of Helsinki"},
-        {"icon": "link", "text": "Website", "href": "https://YOUR-WEBSITE"},
-        {"icon": "mail", "text": "Email", "href": "mailto:YOUR.EMAIL@helsinki.fi"},
-        {"icon": "github", "text": "Github", "href": "https://github.com/MapSyntax"},
-        {"icon": "scholar", "text": "Google Scholar", "href": "https://scholar.google.com/citations?user=YOURID"},
-        {"icon": "orcid", "text": "ORCID", "href": "https://orcid.org/YOUR-ORCID"},
-        {"icon": "twitter", "text": "Twitter", "href": "https://x.com/YOURHANDLE"},
+        {"icon": "link", "text": "Website", "href": "https://researchportal.helsinki.fi/en/persons/kamyar-hasanzadeh/"},
+        {"icon": "mail", "text": "Email", "href": "mailto:kamyar.hasanzadeh[at]helsinki.fi"},
+        {"icon": "github", "text": "Github", "href": "https://github.com/kamyar68"},
+        {"icon": "scholar", "text": "Google Scholar", "href": "https://scholar.google.fi/citations?user=XBp2BEEAAAAJ&hl=fi"},
+        {"icon": "orcid", "text": "ORCID", "href": "https://orcid.org/0000-0002-0705-7662"},
+        {"icon": "linkedin", "text": "LinkedIn", "href": "https://www.linkedin.com/in/kamyar-hasanzadeh-6257a227/"},
+
     ],
 }
 
