@@ -4,6 +4,12 @@
 About
 -------
 
+.. image:: /_static/figures/banner.png
+   :width: 100%
+   :align: center
+   :alt: Mobility and activity space modeling banner
+   
+
 Hello, and welcome to my personal website! On these pages, I share primarily work-related content and news. I’m Kamyar Hasanzadeh, a geospatial researcher, problem solver, and educator based in Finland at the University of Helsinki, Department of Geosciences and Geography.
 
 My work sits at the intersection of:
