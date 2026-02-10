@@ -1,7 +1,8 @@
 <div class="kh-brand">
-  {% if logo %}
+  {% set _logo = logo_url or logo %}
+  {% if _logo %}
     <a class="kh-brand__logo" href="{{ pathto(master_doc) }}">
-      <img src="{{ pathto(logo, 1) }}" alt="Profile photo">
+      <img src="{{ pathto(_logo, 1) }}" alt="Profile photo">
     </a>
   {% endif %}
 
