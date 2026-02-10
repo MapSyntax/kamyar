@@ -12,9 +12,9 @@
 }
 
 .kh-brand--stacked .kh-brand__logo img{
-  width: 96px;               /* BIGGER photo */
-  height: 96px;
-  border-radius: 999px;
+  width: 150px;               /* BIGGER photo */
+  height: 150px;
+  border-radius: 1200px;
   object-fit: cover;
   display: block;
 }
