@@ -1,16 +1,15 @@
 <div class="kh-brand">
-  {# Optional photo/logo #}
   {% if logo %}
     <a class="kh-brand__logo" href="{{ pathto(master_doc) }}">
-      <img src="{{ pathto('_static/logo/kamyarh.png', 1) }}" alt="Profile photo">
+      <img src="{{ pathto(logo, 1) }}" alt="Profile photo">
     </a>
   {% endif %}
 
   <div class="kh-brand__text">
     <div class="kh-brand__name">Dr. Kamyar Hasanzadeh</div>
     <div class="kh-brand__sub">
-      Lecturer - Adjunct Professor,<br>
-      Geoinformatics, urban Informatics<br>
+      Lecturer · Adjunct Professor<br>
+      Geoinformatics & Urban Informatics<br>
       University of Helsinki
     </div>
   </div>

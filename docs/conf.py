@@ -37,7 +37,7 @@ html_theme = "furo"
 html_theme_options = {
     "collapse_navigation": False,
     'search_bar_position': 'none',
-    'nosidebar': True,
+    'nosidebar': False,
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         "notebook_interface": "classic"
@@ -47,7 +47,6 @@ html_theme_options = {
     "repository_url": "https://github.com/MapSyntax/kamyar",
     "use_edit_page_button": True,
     "use_repository_button": True,
-    'logo_only': True,
     'display_version': False,
 
 
