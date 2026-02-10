@@ -1,0 +1,27 @@
+.kh-brand {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 8px 0 12px 0;
+}
+
+.kh-brand__logo img{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.kh-brand__name{
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.kh-brand__sub{
+  font-size: 0.92rem;
+  opacity: 0.75;
+  line-height: 1.4;
+}

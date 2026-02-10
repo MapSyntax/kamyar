@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'PersonalWebsite'
+project = 'Kamyar Hasanzadeh'
 copyright = 'Kamyar Hasanzadeh'
 author = 'Kamyar Hasanzadeh'
 release = '2025'
@@ -25,9 +25,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_last_updated_fmt = "%d %B %Y"
-html_logo = "static/logo/kamyarh.png"
+html_logo = "_static/logo/kamyarh.png"
 html_short_title = "Kamyar H."
 html_title = ""
+html_css_files = ["custom.css"]
+
 
 html_theme = "furo"
 
@@ -45,7 +47,6 @@ html_theme_options = {
     "repository_url": "https://github.com/MapSyntax/kamyar",
     "use_edit_page_button": True,
     "use_repository_button": True,
-    'logo_only': True,
     'display_version': False,
 
 
