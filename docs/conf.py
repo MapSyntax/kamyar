@@ -50,7 +50,7 @@ html_logo = "_static/logo/kamyarh.png"
 html_short_title = "Kamyar H."
 html_title = ""
 html_css_files = ["custom.css"]
-html_favicon = html_favicon = "_static/logo/favicon.ico"
+html_favicon = html_favicon = "_static/logo/favicon.png"
 
 
 html_context = {
