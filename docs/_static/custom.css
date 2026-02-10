@@ -13,8 +13,8 @@
 }
 
 .kh-brand--stacked .kh-brand__logo img{
-  width: 112px;
-  height: 112px;
+  width: 200px;
+  height: 200px;
   border-radius: 999px;
   object-fit: cover;
   object-position: center 20%;
@@ -74,4 +74,11 @@
 
 .kh-brand--stacked .kh-brand__details a:hover{
   text-decoration: underline;
+}
+
+/* Remove search bar entirely */
+.sidebar-search-container,
+.sidebar-search,
+.search-button {
+  display: none !important;
 }
