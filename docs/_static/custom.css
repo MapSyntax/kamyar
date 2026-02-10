@@ -216,3 +216,11 @@
 .sidebar-tree li{
   margin: 10px 0;
 }
+
+.sidebar-tree a,
+.sidebar-tree a:visited,
+.sidebar-tree a:hover,
+.sidebar-tree a:active{
+  color: var(--color-foreground-secondary);
+}
+
