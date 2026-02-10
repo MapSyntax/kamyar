@@ -226,4 +226,16 @@
   color: var(--color-foreground-primary);
 }
 
+/* ---------- REALLY force sidebar menu text color ---------- */
+
+.sidebar-tree a,
+.sidebar-tree a span,
+.sidebar-tree a:visited,
+.sidebar-tree a:hover,
+.sidebar-tree a:active,
+.sidebar-tree a:focus{
+  color: var(--color-foreground-primary) !important;
+  text-decoration: none !important;
+}
+
 
