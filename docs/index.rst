@@ -1,9 +1,7 @@
 .. title:: Kamyar H — Personal Website
 
-Kamyar H personal website
-=========================
 
-Welcome
+About
 -------
 
 Hello, and welcome to my personal website! On these pages, I share primarily work-related content and news. I’m Kamyar Hasanzadeh, a geospatial researcher, problem solver, and educator based in Finland at the University of Helsinki, Department of Geosciences and Geography.
