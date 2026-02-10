@@ -217,10 +217,13 @@
   margin: 10px 0;
 }
 
+/* ---------- Force sidebar button text color ---------- */
+
 .sidebar-tree a,
 .sidebar-tree a:visited,
 .sidebar-tree a:hover,
 .sidebar-tree a:active{
-  color: var(--color-foreground-secondary);
+  color: var(--color-foreground-primary);
 }
+
 
