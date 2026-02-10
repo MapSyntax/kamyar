@@ -12,8 +12,8 @@
 }
 
 .kh-brand--stacked .kh-brand__logo img{
-  width: 150px;               /* BIGGER photo */
-  height: 150px;
+  width: 200px;               /* BIGGER photo */
+  height: 200px;
   border-radius: 999px;
   object-fit: cover;
   object-position: center 20%;

@@ -7,11 +7,11 @@
   {% endif %}
 
   <div class="kh-brand__text">
-    <div class="kh-brand__name">Dr. Kamyar Hasanzadeh</div>
+    <div class="kh-brand__name">{{ kh_profile.name }}</div>
     <div class="kh-brand__sub">
-      Lecturer · Adjunct Professor<br>
-      Geoinformatics & Urban Informatics<br>
-      University of Helsinki
+      {% for line in kh_profile.lines %}
+        {{ line }}{% if not loop.last %}<br>{% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>
