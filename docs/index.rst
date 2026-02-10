@@ -6,7 +6,7 @@ Kamyar H personal website
 Welcome
 -------
 
-Hi, I’m Kamyar Hasanzadeh, a geospatial researcher, problem solver, and educator based in Finland at the University of Helsinki, Department of Geosciences and Geography.
+Hello, and welcome to my personal website! On these pages, I share primarily work-related content and news. I’m Kamyar Hasanzadeh, a geospatial researcher, problem solver, and educator based in Finland at the University of Helsinki, Department of Geosciences and Geography.
 
 My work sits at the intersection of:
 - human mobility and everyday travel behavior
@@ -28,13 +28,12 @@ Site contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Menu
+   :caption: 
 
-   cv.ipynb
+   
    publications.ipynb
    teaching.ipynb
-   projects.ipynb
-   contact.ipynb
+   cv.ipynb
 
 
    
