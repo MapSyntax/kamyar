@@ -4,7 +4,7 @@
 About
 -------
 
-.. image:: /_static/figures/banner2.png
+.. image:: /_static/figures/banner3.png
    :width: 100%
    :align: center
    :alt: Mobility and activity space modeling banner
