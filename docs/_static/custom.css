@@ -1,37 +1,34 @@
-/* Stacked profile block */
-.kh-brand--stacked{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;   /* left aligned, academic */
-  padding: 12px 0 18px 0;
-}
-
-/* Photo */
-.kh-brand--stacked .kh-brand__logo{
-  margin-bottom: 12px;
-}
-
-.kh-brand--stacked .kh-brand__logo img{
-  width: 200px;               /* BIGGER photo */
-  height: 200px;
-  border-radius: 999px;
-  object-fit: cover;
-  object-position: center 20%;
-  display: block;
-}
-
-/* Name */
-.kh-brand--stacked .kh-brand__name{
-  font-size: 1.35rem;
-  font-weight: 800;
-  line-height: 1.15;
-  margin: 0 0 8px 0;
-}
-
-/* Subtitle */
-.kh-brand--stacked .kh-brand__sub{
-  font-size: 1rem;
-  line-height: 1.4;
-  opacity: 0.8;
+.kh-brand__details{
+  list-style: none;
+  padding: 10px 0 0 0;
   margin: 0;
+}
+
+.kh-detail{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.kh-icon{
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  opacity: 0.9;
+}
+
+.kh-icon svg{
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
+}
+
+.kh-brand__details a{
+  text-decoration: none;
+}
+
+.kh-brand__details a:hover{
+  text-decoration: underline;
 }

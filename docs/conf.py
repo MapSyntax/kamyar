@@ -18,6 +18,16 @@ kh_profile = {
         "Geoinformatics & Urban Informatics",
         "University of Helsinki",
     ],
+    "details": [
+        {"icon": "map", "text": "Helsinki / Espoo, Finland"},
+        {"icon": "home", "text": "University of Helsinki"},
+        {"icon": "link", "text": "Website", "href": "https://YOUR-WEBSITE"},
+        {"icon": "mail", "text": "Email", "href": "mailto:YOUR.EMAIL@helsinki.fi"},
+        {"icon": "github", "text": "Github", "href": "https://github.com/MapSyntax"},
+        {"icon": "scholar", "text": "Google Scholar", "href": "https://scholar.google.com/citations?user=YOURID"},
+        {"icon": "orcid", "text": "ORCID", "href": "https://orcid.org/YOUR-ORCID"},
+        {"icon": "twitter", "text": "Twitter", "href": "https://x.com/YOURHANDLE"},
+    ],
 }
 
 
