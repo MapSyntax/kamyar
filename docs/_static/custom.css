@@ -1,34 +1,77 @@
-.kh-brand__details{
+/* ---------- Profile block (photo above text) ---------- */
+
+.kh-brand.kh-brand--stacked{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 0 18px 0;
+}
+
+.kh-brand--stacked .kh-brand__logo{
+  margin-bottom: 12px;
+  line-height: 0;
+}
+
+.kh-brand--stacked .kh-brand__logo img{
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.kh-brand--stacked .kh-brand__text{
+  min-width: 0;
+}
+
+.kh-brand--stacked .kh-brand__name{
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 8px 0;
+}
+
+.kh-brand--stacked .kh-brand__sub{
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ---------- Details list (icons + links) ---------- */
+
+.kh-brand--stacked .kh-brand__details{
   list-style: none;
   padding: 10px 0 0 0;
   margin: 0;
 }
 
-.kh-detail{
+.kh-brand--stacked .kh-detail{
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 8px 0;
 }
 
-.kh-icon{
+.kh-brand--stacked .kh-icon{
   width: 18px;
   height: 18px;
   flex: 0 0 auto;
   opacity: 0.9;
 }
 
-.kh-icon svg{
+.kh-brand--stacked .kh-icon svg{
   width: 18px;
   height: 18px;
   display: block;
   fill: currentColor;
 }
 
-.kh-brand__details a{
+.kh-brand--stacked .kh-brand__details a{
   text-decoration: none;
 }
 
-.kh-brand__details a:hover{
+.kh-brand--stacked .kh-brand__details a:hover{
   text-decoration: underline;
 }
