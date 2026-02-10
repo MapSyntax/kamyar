@@ -82,3 +82,63 @@
 .search-button {
   display: none !important;
 }
+
+
+
+/* ---------- Make Furo sidebar navigation cleaner ---------- */
+
+/* Give sidebar a bit more breathing room */
+.sidebar-drawer{
+  padding-top: 8px;
+}
+
+/* Navigation container spacing */
+.sidebar-tree{
+  margin-top: 14px;
+}
+
+/* Remove bullets and tighten list */
+.sidebar-tree ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Each nav item as a “soft row” */
+.sidebar-tree li{
+  margin: 4px 0;
+}
+
+/* Links look more like a menu */
+.sidebar-tree a{
+  display: block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* Hover */
+.sidebar-tree a:hover{
+  background: rgba(127, 127, 127, 0.12);
+}
+
+/* Current page highlight */
+.sidebar-tree .current > a,
+.sidebar-tree a.current{
+  background: rgba(127, 127, 127, 0.18);
+  font-weight: 700;
+}
+
+/* Tone down deep nesting (docs-y look) */
+.sidebar-tree ul ul{
+  margin-top: 4px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(127, 127, 127, 0.18);
+}
+
+/* Optional: hide very deep levels (uncomment if you want simpler) */
+/*
+.sidebar-tree ul ul ul{
+  display: none;
+}
+*/
