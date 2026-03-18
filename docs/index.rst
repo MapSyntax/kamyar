@@ -35,7 +35,7 @@ Site contents
    :caption: Pages
 
    
-   publications.ipynb
+   notebooks/publications.ipynb
    notebooks/teaching.ipynb
    notebooks/cv.ipynb
    notebooks/tools.ipynb
