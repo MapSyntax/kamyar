@@ -36,8 +36,9 @@ Site contents
 
    
    publications.ipynb
-   teaching.ipynb
-   cv.ipynb
+   notebooks/teaching.ipynb
+   notebooks/cv.ipynb
+   notebooks/tools.ipynb
 
 
    
