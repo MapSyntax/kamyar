@@ -35,10 +35,10 @@ Site contents
    :caption: Pages
 
    
-   notebooks/publications.ipynb
-   notebooks/teaching.ipynb
-   notebooks/cv.ipynb
-   notebooks/tools.ipynb
+   publications.ipynb
+   teaching.ipynb
+   cv.ipynb
+   tools.ipynb
 
 
    
