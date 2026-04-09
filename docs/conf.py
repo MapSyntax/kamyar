@@ -22,7 +22,7 @@ kh_profile = {
         {"icon": "map", "text": "Helsinki, Finland"},
         {"icon": "home", "text": "University of Helsinki"},
         {"icon": "link", "text": "Website", "href": "https://researchportal.helsinki.fi/en/persons/kamyar-hasanzadeh/"},
-        {"icon": "building-columns", "text": "MapSyntax", "href": "https://mapsyntaxhub.com/"},
+        {"icon": "home", "text": "MapSyntax", "href": "https://mapsyntaxhub.com/"},
         {"icon": "mail", "text": "Email", "href": "mailto:kamyar.hasanzadeh[at]helsinki.fi"},
         {"icon": "github", "text": "Github", "href": "https://github.com/kamyar68"},
         {"icon": "scholar", "text": "Google Scholar", "href": "https://scholar.google.fi/citations?user=XBp2BEEAAAAJ&hl=fi"},
