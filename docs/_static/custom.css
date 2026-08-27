@@ -101,10 +101,18 @@ a {
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 2.75rem;
-  align-items: start;
 }
 
+/* .kh-sidebar (the grid cell) stretches to match the height of the main
+   content column (grid default align-items:stretch) so that the sticky
+   card inside has room to stay pinned for the full scroll of a long
+   page — a plain sticky div on a start-aligned cell only stays stuck
+   for the height of its own content, then scrolls away. */
 .kh-sidebar {
+  height: 100%;
+}
+
+.kh-sidebar__card {
   position: sticky;
   top: 2rem;
   padding: 1.6rem 1.4rem;
@@ -254,7 +262,7 @@ a {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .kh-sidebar {
+  .kh-sidebar__card {
     position: static;
     text-align: left;
   }

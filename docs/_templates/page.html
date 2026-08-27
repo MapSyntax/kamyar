@@ -24,6 +24,7 @@
 {% set p = kh_profile if kh_profile is defined else {'name': '', 'lines': [], 'details': []} %}
 <div class="kh-shell">
   <aside class="kh-sidebar">
+   <div class="kh-sidebar__card">
     <a class="kh-sidebar__brand" href="{{ pathto(master_doc) }}">
       <img class="kh-sidebar__photo" src="{{ pathto('_static/logo/kamyarh.png', 1) }}" alt="{{ p.name }}">
       <div class="kh-sidebar__name">{{ p.name }}</div>
@@ -58,6 +59,7 @@
         <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
       </button>
     </div>
+   </div>
   </aside>
 
   <div class="kh-main kh-page kh-page--{{ pagename }}">
