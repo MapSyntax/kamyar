@@ -1,78 +1,144 @@
-/* ---------- Profile block (photo above text) ---------- */
+/* =========================================================================
+   Kamyar Hasanzadeh — academic site theme
+   Layered on top of Furo. Furo's own color/font variables are set in
+   conf.py (light_css_variables / dark_css_variables); this file covers
+   layout, components, and the bits Furo doesn't expose as variables.
+   ========================================================================= */
 
-.kh-brand.kh-brand--stacked{
+:root {
+  --kh-radius: 16px;
+  --kh-radius-sm: 10px;
+  --kh-shadow: 0 1px 2px rgba(20, 20, 20, 0.04), 0 8px 24px -12px rgba(20, 20, 20, 0.16);
+  --kh-shadow-hover: 0 4px 10px -2px rgba(20, 20, 20, 0.10), 0 16px 32px -12px rgba(20, 20, 20, 0.22);
+}
+
+/* ---------- Base typography ---------- */
+
+article.bd-article,
+.content,
+article {
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+article h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.6em;
+}
+
+article h2 {
+  font-size: 1.55rem;
+  margin-top: 2.4em;
+  padding-top: 0.2em;
+}
+
+article h2::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-brand-primary);
+  margin-bottom: 0.7em;
+  opacity: 0.85;
+}
+
+article h3 {
+  font-size: 1.2rem;
+  margin-top: 1.8em;
+}
+
+article p {
+  max-width: 68ch;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Sidebar profile card ---------- */
+
+.kh-brand.kh-brand--stacked {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 12px 0 18px 0;
+  padding: 8px 0 20px 0;
 }
 
-.kh-brand--stacked .kh-brand__logo{
-  margin-bottom: 12px;
+.kh-brand--stacked .kh-brand__logo {
+  margin-bottom: 14px;
   line-height: 0;
 }
 
-.kh-brand--stacked .kh-brand__logo img{
-  width: 200px;
-  height: 200px;
+.kh-brand--stacked .kh-brand__logo img {
+  width: 108px;
+  height: 108px;
   border-radius: 999px;
   object-fit: cover;
   object-position: center 20%;
   display: block;
+  box-shadow: 0 0 0 3px var(--color-background-primary), 0 0 0 4px var(--color-foreground-border);
 }
 
-.kh-brand--stacked .kh-brand__text{
-  min-width: 0;
-}
-
-.kh-brand--stacked .kh-brand__name{
-  font-size: 1.35rem;
-  font-weight: 800;
-  line-height: 1.15;
+.kh-brand--stacked .kh-brand__name {
+  font-family: var(--font-stack--headings);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
   margin: 0 0 8px 0;
+  color: var(--color-foreground-primary);
 }
 
-.kh-brand--stacked .kh-brand__sub{
-  font-size: 1rem;
-  line-height: 1.4;
-  opacity: 0.8;
+.kh-brand--stacked .kh-brand__sub {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--color-foreground-secondary);
   margin: 0;
 }
 
-/* ---------- Details list (icons + links) ---------- */
-
-.kh-brand--stacked .kh-brand__details{
+.kh-brand--stacked .kh-brand__details {
   list-style: none;
-  padding: 10px 0 0 0;
+  padding: 14px 0 0 0;
   margin: 0;
+  border-top: 1px solid var(--color-foreground-border);
+  width: 100%;
 }
 
-.kh-brand--stacked .kh-detail{
+.kh-brand--stacked .kh-detail {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 8px 0;
+  margin: 9px 0;
+  font-size: 0.86rem;
 }
 
-.kh-brand--stacked .kh-icon{
-  width: 18px;
-  height: 18px;
+.kh-brand--stacked .kh-icon {
+  width: 16px;
+  height: 16px;
   flex: 0 0 auto;
+  color: var(--color-brand-primary);
   opacity: 0.9;
 }
 
-.kh-brand--stacked .kh-icon svg{
-  width: 18px;
-  height: 18px;
+.kh-brand--stacked .kh-icon svg {
+  width: 16px;
+  height: 16px;
   display: block;
   fill: currentColor;
 }
 
-.kh-brand--stacked .kh-brand__details a{
+.kh-brand--stacked .kh-brand__details a {
+  color: var(--color-foreground-secondary);
   text-decoration: none;
 }
 
-.kh-brand--stacked .kh-brand__details a:hover{
+.kh-brand--stacked .kh-brand__details a:hover {
+  color: var(--color-brand-primary);
   text-decoration: underline;
 }
 
@@ -83,159 +149,285 @@
   display: none !important;
 }
 
+/* ---------- Sidebar navigation as soft buttons ---------- */
 
-
-/* ---------- Make Furo sidebar navigation cleaner ---------- */
-
-/* Give sidebar a bit more breathing room */
-.sidebar-drawer{
-  padding-top: 8px;
+.sidebar-drawer {
+  padding-top: 4px;
 }
 
-/* Navigation container spacing */
-.sidebar-tree{
-  margin-top: 14px;
+.sidebar-tree {
+  margin-top: 6px;
+  font-size: 0.95rem;
 }
 
-/* Remove bullets and tighten list */
-.sidebar-tree ul{
+.sidebar-tree ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
-/* Each nav item as a “soft row” */
-.sidebar-tree li{
-  margin: 4px 0;
+.sidebar-tree li {
+  margin: 6px 0;
 }
-
-/* Links look more like a menu */
-.sidebar-tree a{
-  display: block;
-  padding: 8px 10px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-/* Hover */
-.sidebar-tree a:hover{
-  background: rgba(127, 127, 127, 0.12);
-}
-
-/* Current page highlight */
-.sidebar-tree .current > a,
-.sidebar-tree a.current{
-  background: rgba(127, 127, 127, 0.18);
-  font-weight: 700;
-}
-
-/* Tone down deep nesting (docs-y look) */
-.sidebar-tree ul ul{
-  margin-top: 4px;
-  padding-left: 10px;
-  border-left: 1px solid rgba(127, 127, 127, 0.18);
-}
-
-/* Optional: hide very deep levels (uncomment if you want simpler) */
-/*
-.sidebar-tree ul ul ul{
-  display: none;
-}
-*/
-
-/* ---------- Sidebar menu as buttons ---------- */
-
-/* Bigger clickable area */
-.sidebar-tree a{
-  display: block;
-  padding: 12px 14px;        /* bigger buttons */
-  border-radius: 14px;
-  font-size: 1.05rem;        /* bigger text */
-  font-weight: 600;
-  transition: background 0.15s ease, transform 0.05s ease;
-}
-
-/* Hover = button lift */
-.sidebar-tree a:hover{
-  background: rgba(127, 127, 127, 0.16);
-  transform: translateY(-1px);
-}
-
-/* Active page = pressed button */
-.sidebar-tree .current > a,
-.sidebar-tree a.current{
-  background: rgba(127, 127, 127, 0.25);
-  font-weight: 700;
-}
-
-/* Space between buttons */
-.sidebar-tree li{
-  margin: 8px 0;
-}
-
-/* Remove docs-y nesting look */
-.sidebar-tree ul ul{
-  padding-left: 0;
-  border-left: none;
-}
-/* ---------- Make sidebar menu look like real buttons ---------- */
-
-/* Remove link look completely */
-.sidebar-tree a,
-.sidebar-tree a:visited{
-  color: inherit;                 /* no blue / purple */
-  text-decoration: none;          /* no underline */
-}
-
-/* Button base */
-.sidebar-tree a{
-  background: rgba(127,127,127,0.10);
-  border-radius: 14px;
-  padding: 12px 14px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  transition: background 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
-}
-
-/* Hover = soft raised button */
-.sidebar-tree a:hover{
-  background: rgba(127,127,127,0.18);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-/* Active/current = pressed button */
-.sidebar-tree .current > a,
-.sidebar-tree a.current{
-  background: rgba(127,127,127,0.28);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
-  font-weight: 700;
-}
-
-/* Spacing between buttons */
-.sidebar-tree li{
-  margin: 10px 0;
-}
-
-/* ---------- Force sidebar button text color ---------- */
 
 .sidebar-tree a,
-.sidebar-tree a:visited,
-.sidebar-tree a:hover,
-.sidebar-tree a:active{
-  color: var(--color-foreground-primary);
-}
-
-/* ---------- REALLY force sidebar menu text color ---------- */
-
-.sidebar-tree a,
-.sidebar-tree a span,
 .sidebar-tree a:visited,
 .sidebar-tree a:hover,
 .sidebar-tree a:active,
-.sidebar-tree a:focus{
+.sidebar-tree a:focus,
+.sidebar-tree a span {
   color: var(--color-foreground-primary) !important;
   text-decoration: none !important;
 }
 
+.sidebar-tree a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: var(--kh-radius-sm);
+  font-weight: 500;
+  background: transparent;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
 
+.sidebar-tree a:hover {
+  background: var(--color-background-hover);
+  transform: translateY(-1px);
+}
+
+.sidebar-tree .current > a,
+.sidebar-tree a.current {
+  background: var(--color-background-hover);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 0 var(--color-brand-primary);
+}
+
+.sidebar-tree ul ul {
+  margin-top: 2px;
+  padding-left: 10px;
+  border-left: none;
+}
+
+/* =========================================================================
+   Homepage hero
+   ========================================================================= */
+
+.kh-hero {
+  position: relative;
+  margin: 0 -1px 2.6em -1px;
+  border-radius: var(--kh-radius);
+  overflow: hidden;
+  isolation: isolate;
+  color: #fdfbf7;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.kh-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--kh-hero-image, none);
+  background-size: cover;
+  background-position: center 62%;
+  z-index: -2;
+}
+
+.kh-hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 14, 20, 0.05) 0%, rgba(10, 14, 20, 0.25) 45%, rgba(8, 11, 16, 0.88) 100%);
+}
+
+.kh-hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 3.2rem 2.4rem 2rem 2.4rem;
+}
+
+.kh-hero__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin: 0 0 0.6em 0;
+}
+
+.kh-hero__title {
+  font-family: var(--font-stack--headings);
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.4em 0;
+  color: #fff;
+}
+
+.kh-hero__tagline {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  max-width: 58ch;
+  opacity: 0.92;
+  margin: 0;
+}
+
+@media (max-width: 67em) {
+  .kh-hero {
+    margin: -1.6em -1px 2.2em -1px;
+  }
+  .kh-hero__content {
+    padding: 2.2rem 1.5rem 1.6rem 1.5rem;
+  }
+}
+
+/* ---------- Explore card grid ---------- */
+
+.kh-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1.6em 0 2.4em 0;
+  list-style: none;
+  padding: 0;
+}
+
+.kh-card {
+  display: block;
+  padding: 1.3rem 1.4rem;
+  border-radius: var(--kh-radius-sm);
+  border: 1px solid var(--color-foreground-border);
+  background: var(--color-background-secondary);
+  text-decoration: none !important;
+  color: var(--color-foreground-primary) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.kh-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--kh-shadow-hover);
+  border-color: var(--color-brand-primary);
+}
+
+.kh-card__icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.kh-card__title {
+  font-family: var(--font-stack--headings);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0 0 0.3em 0;
+}
+
+.kh-card__desc {
+  font-size: 0.86rem;
+  color: var(--color-foreground-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Research focus chips (about section) ---------- */
+
+.kh-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.2em 0 2em 0;
+}
+
+.kh-chips li {
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-foreground-border);
+  color: var(--color-foreground-secondary);
+}
+
+/* =========================================================================
+   Publications list (rendered by publications.ipynb via nbsphinx)
+   ========================================================================= */
+
+.rendered_html ol {
+  list-style: none;
+  padding: 0 !important;
+  margin: 1.4em 0 !important;
+  counter-reset: kh-pub;
+}
+
+.rendered_html ol > li {
+  counter-increment: kh-pub;
+  position: relative;
+  padding: 0.95rem 1.1rem 0.95rem 3.2rem !important;
+  margin: 0.55em 0 !important;
+  border: 1px solid var(--color-foreground-border);
+  border-radius: var(--kh-radius-sm);
+  background: var(--color-background-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.rendered_html ol > li:hover {
+  box-shadow: var(--kh-shadow);
+  border-color: var(--color-brand-primary);
+}
+
+.rendered_html ol > li::before {
+  content: counter(kh-pub);
+  position: absolute;
+  left: 0.9rem;
+  top: 0.95rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: var(--color-brand-primary);
+  color: #fdfbf7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rendered_html ol > li a {
+  color: var(--color-brand-primary);
+}
+
+/* =========================================================================
+   Notebook (nbsphinx) output cleanup — keep code cells subtle
+   ========================================================================= */
+
+.nboutput .prompt,
+.nbinput .prompt {
+  display: none !important;
+}
+
+div.nbinput,
+div.nboutput {
+  margin: 0 !important;
+}
+
+div.nbinput.container {
+  display: none;
+}
+
+/* ---------- Footer ---------- */
+
+.related-pages .next-page,
+.related-pages .prev-page {
+  border-radius: var(--kh-radius-sm);
+}
+
+footer .icons a {
+  color: var(--color-foreground-secondary);
+}
+
+footer .icons a:hover {
+  color: var(--color-brand-primary);
+}

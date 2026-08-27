@@ -1,8 +1,4 @@
 ipykernel
 nbsphinx
-jupyterlab
-geopandas
-sphinx_book_theme
-ipywidgets
-shibuya
 furo
+requests
