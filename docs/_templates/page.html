@@ -42,7 +42,7 @@
     <div class="kh-sidebar__contact">
       {% for item in p.details %}
         {% if item.href is defined and item.href %}
-        <a class="kh-sidebar__contact-item" href="{{ item.href }}" rel="me">
+        <a class="kh-sidebar__contact-item" href="{{ item.href }}" rel="me noopener noreferrer" target="_blank">
           <span class="kh-icon" aria-hidden="true">{{ kh_icon(item.icon) }}</span>
           {{ item.text }}
         </a>
