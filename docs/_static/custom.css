@@ -84,7 +84,7 @@ a {
 
 .content {
   width: 100% !important;
-  max-width: 900px !important;
+  max-width: 1040px !important;
   margin: 0 auto !important;
   padding: 0 2rem !important;
 }
@@ -175,6 +175,162 @@ a {
   .kh-topnav__links a {
     padding: 0.45rem 0.5rem;
     font-size: 0.85rem;
+  }
+}
+
+/* =========================================================================
+   CV page — sticky contact sidebar + resume-style timeline lists.
+   Contact links live in the site footer everywhere else, but on a long
+   page like the CV they need to stay reachable without scrolling to
+   the bottom, so this page gets its own two-column layout.
+   ========================================================================= */
+
+.kh-cv-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.75rem;
+  align-items: start;
+}
+
+.kh-cv-aside {
+  position: sticky;
+  top: 4.5rem;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid var(--color-foreground-border);
+  border-radius: var(--kh-radius);
+  background: var(--color-background-secondary);
+  text-align: center;
+}
+
+.kh-cv-aside__photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  margin: 0 auto 0.9rem auto;
+  box-shadow: 0 0 0 3px var(--color-background-secondary), 0 0 0 4px var(--color-foreground-border);
+}
+
+.kh-cv-aside__name {
+  font-family: var(--font-stack--headings);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-foreground-primary);
+}
+
+.kh-cv-aside__lines {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-foreground-secondary);
+}
+
+.kh-cv-aside__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--color-foreground-border);
+  text-align: left;
+}
+
+.kh-cv-aside__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--color-foreground-secondary) !important;
+  text-decoration: none !important;
+}
+
+.kh-cv-aside__contact-item:hover {
+  color: var(--color-brand-primary) !important;
+}
+
+.kh-cv-aside__contact-item .kh-icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+}
+
+.kh-cv-aside__contact-item .kh-icon svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  fill: currentColor;
+}
+
+.kh-cv-aside__quicklinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--color-foreground-border);
+}
+
+.kh-cv-pill {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-foreground-border);
+  color: var(--color-foreground-primary) !important;
+  text-decoration: none !important;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.kh-cv-pill:hover {
+  background: var(--color-background-hover);
+  border-color: var(--color-brand-primary);
+}
+
+.kh-cv-main ul {
+  list-style: none !important;
+  margin: 0.8em 0 1.7em 0 !important;
+  padding: 0 !important;
+}
+
+.kh-cv-main ul li {
+  position: relative;
+  padding-left: 1.4rem !important;
+  margin: 0.75em 0 !important;
+  line-height: 1.55;
+}
+
+.kh-cv-main ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-brand-primary);
+}
+
+@media (max-width: 55em) {
+  .kh-cv-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .kh-cv-aside {
+    position: static;
+    text-align: left;
+  }
+  .kh-cv-aside__photo {
+    margin: 0 0 0.9rem 0;
+  }
+  .kh-cv-aside__quicklinks {
+    flex-direction: row;
+  }
+  .kh-cv-pill {
+    flex: 1;
+    text-align: center;
   }
 }
 
