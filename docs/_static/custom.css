@@ -62,10 +62,10 @@ a {
 }
 
 /* =========================================================================
-   Replace Furo's docs-sidebar chrome with a real site layout: a sticky
-   top nav + footer contact row. The sidebar/toc drawers and the mobile
-   header are Furo defaults we no longer use — hide them outright, and
-   let .content reclaim the width they used to reserve.
+   Replace Furo's docs-sidebar chrome with our own persistent left
+   sidebar (profile photo, contact links, nav) + main content column.
+   Furo's own sidebar/toc drawers and mobile header are unused — hidden
+   outright, and .content reclaims the width they used to reserve.
    ========================================================================= */
 
 .sidebar-drawer,
@@ -86,115 +86,27 @@ a {
   width: 100% !important;
   max-width: 1040px !important;
   margin: 0 auto !important;
-  padding: 0 2rem !important;
+  padding: 2.5rem 2rem 0 2rem !important;
 }
 
 @media (max-width: 40em) {
   .content {
-    padding: 0 1.25rem !important;
+    padding: 1.75rem 1.25rem 0 1.25rem !important;
   }
 }
 
-/* ---------- Top navigation ---------- */
+/* ---------- Site shell: sidebar + main column ---------- */
 
-.kh-topnav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0.85rem 2rem;
-  background: color-mix(in srgb, var(--color-background-primary) 88%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-foreground-border);
-}
-
-.kh-topnav__brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none !important;
-  color: var(--color-foreground-primary) !important;
-  font-family: var(--font-stack--headings);
-  font-weight: 600;
-  font-size: 1rem;
-  white-space: nowrap;
-}
-
-.kh-topnav__avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  object-fit: cover;
-  object-position: center 20%;
-  display: block;
-}
-
-.kh-topnav__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-right: auto;
-}
-
-.kh-topnav__links a {
-  color: var(--color-foreground-secondary) !important;
-  text-decoration: none !important;
-  font-size: 0.92rem;
-  font-weight: 500;
-  padding: 0.5rem 0.7rem;
-  border-radius: 999px;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.kh-topnav__links a:hover {
-  background: var(--color-background-hover);
-  color: var(--color-foreground-primary) !important;
-}
-
-.kh-topnav .theme-toggle-header {
-  display: flex !important;
-}
-
-.kh-topnav .theme-toggle {
-  color: var(--color-foreground-secondary);
-}
-
-@media (max-width: 40em) {
-  .kh-topnav {
-    padding: 0.75rem 1.25rem;
-    gap: 0.75rem;
-  }
-  .kh-topnav__name {
-    display: none;
-  }
-  .kh-topnav__links {
-    gap: 0.1rem;
-  }
-  .kh-topnav__links a {
-    padding: 0.45rem 0.5rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* =========================================================================
-   CV page — sticky contact sidebar + resume-style timeline lists.
-   Contact links live in the site footer everywhere else, but on a long
-   page like the CV they need to stay reachable without scrolling to
-   the bottom, so this page gets its own two-column layout.
-   ========================================================================= */
-
-.kh-cv-layout {
+.kh-shell {
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 2.75rem;
   align-items: start;
 }
 
-.kh-cv-aside {
+.kh-sidebar {
   position: sticky;
-  top: 4.5rem;
+  top: 2rem;
   padding: 1.6rem 1.4rem;
   border: 1px solid var(--color-foreground-border);
   border-radius: var(--kh-radius);
@@ -202,7 +114,12 @@ a {
   text-align: center;
 }
 
-.kh-cv-aside__photo {
+.kh-sidebar__brand {
+  display: block;
+  text-decoration: none !important;
+}
+
+.kh-sidebar__photo {
   width: 96px;
   height: 96px;
   border-radius: 999px;
@@ -213,21 +130,52 @@ a {
   box-shadow: 0 0 0 3px var(--color-background-secondary), 0 0 0 4px var(--color-foreground-border);
 }
 
-.kh-cv-aside__name {
+.kh-sidebar__name {
   font-family: var(--font-stack--headings);
   font-weight: 600;
   font-size: 1.05rem;
-  color: var(--color-foreground-primary);
+  color: var(--color-foreground-primary) !important;
 }
 
-.kh-cv-aside__lines {
+.kh-sidebar__lines {
   margin-top: 0.4rem;
   font-size: 0.82rem;
   line-height: 1.5;
   color: var(--color-foreground-secondary);
 }
 
-.kh-cv-aside__contact {
+.kh-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 1.3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--color-foreground-border);
+}
+
+.kh-sidebar__nav a {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--kh-radius-sm);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-foreground-secondary) !important;
+  text-decoration: none !important;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.kh-sidebar__nav a:hover {
+  background: var(--color-background-hover);
+  color: var(--color-foreground-primary) !important;
+}
+
+.kh-sidebar__nav a.is-current {
+  background: var(--color-background-hover);
+  color: var(--color-brand-primary) !important;
+  font-weight: 700;
+}
+
+.kh-sidebar__contact {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -237,7 +185,7 @@ a {
   text-align: left;
 }
 
-.kh-cv-aside__contact-item {
+.kh-sidebar__contact-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -246,63 +194,51 @@ a {
   text-decoration: none !important;
 }
 
-.kh-cv-aside__contact-item:hover {
+.kh-sidebar__contact-item:hover {
   color: var(--color-brand-primary) !important;
 }
 
-.kh-cv-aside__contact-item .kh-icon {
+.kh-sidebar__contact-item .kh-icon {
   width: 14px;
   height: 14px;
   flex: 0 0 auto;
 }
 
-.kh-cv-aside__contact-item .kh-icon svg {
+.kh-sidebar__contact-item .kh-icon svg {
   width: 14px;
   height: 14px;
   display: block;
   fill: currentColor;
 }
 
-.kh-cv-aside__quicklinks {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1.3rem;
+.kh-sidebar__toggle {
+  margin-top: 1.2rem;
   padding-top: 1.2rem;
   border-top: 1px solid var(--color-foreground-border);
+  display: flex !important;
+  justify-content: center;
 }
 
-.kh-cv-pill {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.5rem 0.8rem;
-  border-radius: 999px;
-  border: 1px solid var(--color-foreground-border);
-  color: var(--color-foreground-primary) !important;
-  text-decoration: none !important;
-  transition: background 0.15s ease, border-color 0.15s ease;
+.kh-sidebar__toggle .theme-toggle {
+  color: var(--color-foreground-secondary);
 }
 
-.kh-cv-pill:hover {
-  background: var(--color-background-hover);
-  border-color: var(--color-brand-primary);
-}
+/* ---------- CV page — resume-style timeline lists ---------- */
 
-.kh-cv-main ul {
+.kh-page--cv ul {
   list-style: none !important;
   margin: 0.8em 0 1.7em 0 !important;
   padding: 0 !important;
 }
 
-.kh-cv-main ul li {
+.kh-page--cv ul li {
   position: relative;
   padding-left: 1.4rem !important;
   margin: 0.75em 0 !important;
   line-height: 1.55;
 }
 
-.kh-cv-main ul li::before {
+.kh-page--cv ul li::before {
   content: "";
   position: absolute;
   left: 0.15rem;
@@ -314,62 +250,31 @@ a {
 }
 
 @media (max-width: 55em) {
-  .kh-cv-layout {
+  .kh-shell {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .kh-cv-aside {
+  .kh-sidebar {
     position: static;
     text-align: left;
   }
-  .kh-cv-aside__photo {
-    margin: 0 0 0.9rem 0;
+  .kh-sidebar__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
   }
-  .kh-cv-aside__quicklinks {
+  .kh-sidebar__photo {
+    margin: 0;
+    flex: 0 0 auto;
+  }
+  .kh-sidebar__nav {
     flex-direction: row;
+    flex-wrap: wrap;
   }
-  .kh-cv-pill {
-    flex: 1;
+  .kh-sidebar__nav a {
+    flex: 1 1 auto;
     text-align: center;
   }
-}
-
-/* ---------- Footer contact row ---------- */
-
-.kh-footer-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.4rem;
-  padding: 1.6rem 0 1.8rem 0;
-  margin-top: 2.5rem;
-  border-top: 1px solid var(--color-foreground-border);
-}
-
-.kh-footer-contact__item {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.86rem;
-  color: var(--color-foreground-secondary) !important;
-  text-decoration: none !important;
-}
-
-.kh-footer-contact__item:hover {
-  color: var(--color-brand-primary) !important;
-}
-
-.kh-footer-contact .kh-icon {
-  width: 15px;
-  height: 15px;
-  flex: 0 0 auto;
-  opacity: 0.9;
-}
-
-.kh-footer-contact .kh-icon svg {
-  width: 15px;
-  height: 15px;
-  display: block;
-  fill: currentColor;
 }
 
 /* =========================================================================

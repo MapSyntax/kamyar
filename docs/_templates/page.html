@@ -20,75 +20,48 @@
   {% endif %}
 {%- endmacro %}
 
-{% block body %}
-<header class="kh-topnav">
-  <a class="kh-topnav__brand" href="{{ pathto(master_doc) }}">
-    <img class="kh-topnav__avatar" src="{{ pathto('_static/logo/kamyarh.png', 1) }}" alt="">
-    <span class="kh-topnav__name">Kamyar Hasanzadeh</span>
-  </a>
-  <nav class="kh-topnav__links" aria-label="Primary">
-    <a href="{{ pathto('publications') }}">Publications</a>
-    <a href="{{ pathto('teaching') }}">Teaching</a>
-    <a href="{{ pathto('cv') }}">CV</a>
-    <a href="{{ pathto('tools') }}">Tools</a>
-  </nav>
-  <div class="theme-toggle-container theme-toggle-header">
-    <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
-      <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-      <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-      <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-      <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-    </button>
-  </div>
-</header>
-{{ super() }}
-{% endblock %}
-
 {% block content %}
-{% if pagename == "cv" %}
-  {% set p = kh_profile if kh_profile is defined else {'name': '', 'lines': [], 'details': []} %}
-  <div class="kh-cv-layout">
-    <aside class="kh-cv-aside">
-      <img class="kh-cv-aside__photo" src="{{ pathto('_static/logo/kamyarh.png', 1) }}" alt="{{ p.name }}">
-      <div class="kh-cv-aside__name">{{ p.name }}</div>
-      <div class="kh-cv-aside__lines">
+{% set p = kh_profile if kh_profile is defined else {'name': '', 'lines': [], 'details': []} %}
+<div class="kh-shell">
+  <aside class="kh-sidebar">
+    <a class="kh-sidebar__brand" href="{{ pathto(master_doc) }}">
+      <img class="kh-sidebar__photo" src="{{ pathto('_static/logo/kamyarh.png', 1) }}" alt="{{ p.name }}">
+      <div class="kh-sidebar__name">{{ p.name }}</div>
+      <div class="kh-sidebar__lines">
         {% for line in p.lines %}<div>{{ line }}</div>{% endfor %}
       </div>
-      <div class="kh-cv-aside__contact">
-        {% for item in p.details %}
-          {% if item.href is defined and item.href %}
-          <a class="kh-cv-aside__contact-item" href="{{ item.href }}" rel="me">
-            <span class="kh-icon" aria-hidden="true">{{ kh_icon(item.icon) }}</span>
-            {{ item.text }}
-          </a>
-          {% endif %}
-        {% endfor %}
-      </div>
-      <div class="kh-cv-aside__quicklinks">
-        <a class="kh-cv-pill" href="{{ pathto('publications') }}">Publications &rarr;</a>
-        <a class="kh-cv-pill" href="{{ pathto('teaching') }}">Teaching &rarr;</a>
-      </div>
-    </aside>
-    <div class="kh-cv-main">{{ body }}</div>
-  </div>
-{% else %}
-  {{ body }}
-{% endif %}
-{% endblock %}
-
-{% block footer %}
-{% set p = kh_profile if kh_profile is defined else {'details': []} %}
-{% if p.details %}
-<div class="kh-footer-contact">
-  {% for item in p.details %}
-    {% if item.href is defined and item.href %}
-    <a class="kh-footer-contact__item" href="{{ item.href }}" rel="me">
-      <span class="kh-icon" aria-hidden="true">{{ kh_icon(item.icon) }}</span>
-      {{ item.text }}
     </a>
-    {% endif %}
-  {% endfor %}
+
+    <nav class="kh-sidebar__nav" aria-label="Primary">
+      <a href="{{ pathto('publications') }}"{% if pagename == 'publications' %} class="is-current"{% endif %}>Publications</a>
+      <a href="{{ pathto('teaching') }}"{% if pagename == 'teaching' %} class="is-current"{% endif %}>Teaching</a>
+      <a href="{{ pathto('cv') }}"{% if pagename == 'cv' %} class="is-current"{% endif %}>CV</a>
+      <a href="{{ pathto('tools') }}"{% if pagename == 'tools' %} class="is-current"{% endif %}>Tools</a>
+    </nav>
+
+    <div class="kh-sidebar__contact">
+      {% for item in p.details %}
+        {% if item.href is defined and item.href %}
+        <a class="kh-sidebar__contact-item" href="{{ item.href }}" rel="me">
+          <span class="kh-icon" aria-hidden="true">{{ kh_icon(item.icon) }}</span>
+          {{ item.text }}
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="kh-sidebar__toggle theme-toggle-container">
+      <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+        <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+        <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+        <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+        <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+      </button>
+    </div>
+  </aside>
+
+  <div class="kh-main kh-page kh-page--{{ pagename }}">
+    {{ body }}
+  </div>
 </div>
-{% endif %}
-{{ super() }}
 {% endblock %}
