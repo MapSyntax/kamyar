@@ -125,7 +125,6 @@ html_theme_options = {
 }
 html_static_path = ['_static']
 
-nb_execution_mode = "force"
-nb_execution_timeout = 120  # needed, e.g., when matplotlib updates its font cache
-nb_execution_show_tb = True  # show errors
+nbsphinx_execute = "always"
+nbsphinx_timeout = 120  # needed, e.g., when matplotlib updates its font cache
 nbsphinx_allow_errors = True
